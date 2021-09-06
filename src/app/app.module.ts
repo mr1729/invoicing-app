@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +10,7 @@ import { InvoiceByHoursComponent } from './invoice-by-hours/invoice-by-hours.com
 import { InvoiceByDatesComponent } from './invoice-by-dates/invoice-by-dates.component';
 import { ModifyEmployeeComponent } from './modify-employee/modify-employee.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EmployeeService } from './employee.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,11 @@ import { AddEmployeeComponent } from './add-employee/add-employee.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
